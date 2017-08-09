@@ -21,8 +21,7 @@
         $reccount = 0;
 
         foreach($arrecords as $srecord){
-            $reccount++;
-
+            
             $acc_name = $srecord[1];
             $order_status = $srecord[2];
             $svc_id = $srecord[3];
@@ -35,7 +34,8 @@
                 "product_name" => $srecord[6]
             )
 
-            array_push($svcsarray, $svc);
+            $svcsarray[$reccount] = $svc;
+            $reccount++;
         }
 
         if($reccount > 0){
