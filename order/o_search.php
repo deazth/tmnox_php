@@ -34,7 +34,8 @@
                 "product_name" => $srecord[6]
             )
 
-            $svcsarray[$reccount] = $svc;
+            array_push($svcsarray, array($reccount => $svc));
+            
             $reccount++;
         }
 
