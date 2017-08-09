@@ -14,7 +14,7 @@
 
         $arrecords = $obj->getInfoOrder->records;
 
-        print_r $arrecords;
+        print_r($arrecords);
 
     }
 
