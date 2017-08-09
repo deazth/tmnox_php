@@ -7,7 +7,7 @@ include '../dbconn.php';
     $pword = "";
 
     // verify the input
-    if(isset($_GET["username"])){
+    if(isset($_GET["username"]) && isset($_GET["password"])){
         $uname = $_GET["username"];
         $pword = $_GET["password"];
 
