@@ -22,16 +22,17 @@
 
         foreach($arrecords as $srecord){
             
-            $acc_name = $srecord[1];
-            $order_status = $srecord[2];
-            $svc_id = $srecord[3];
-            $prod_code = $srecord[4];
-            $prod_desc = $srecord[5];
-            $prod_name = $srecord[6];
+            $acc_name = $srecord[2];
+            $order_type = $srecord[1];
+            $order_status = $srecord[3];
+            $svc_id = $srecord[4];
+            $prod_code = $srecord[5];
+            $prod_desc = $srecord[6];
+            $prod_name = $srecord[7];
 
             $svc = array(
-                "svc_id" => $srecord[3],
-                "product_name" => $srecord[6]
+                "svc_id" => $srecord[4],
+                "product_name" => $srecord[7]
             );
 
             array_push($svcsarray, $svc);
