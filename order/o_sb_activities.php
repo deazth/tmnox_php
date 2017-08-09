@@ -15,7 +15,7 @@
         if(count($arrecords) > 0){
             return $arrecords[0][3];
         } else {
-            return "";
+            return "-";
         }
     }
 
