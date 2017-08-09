@@ -30,7 +30,7 @@
 
         $sblRecords = $f_sb_obj->getActivitySWIFT->records;
 
-        foreach($sblRecords in $ssbl){
+        foreach($sblRecords as $ssbl){
             $s_a_id = $ssbl[1];
             $s_a_name = $ssbl[3];
             $s_a_status = $ssbl[2];
