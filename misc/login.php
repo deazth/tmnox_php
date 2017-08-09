@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: application/json');
 include '../dbconn.php';
 
     $returnarr = array();
@@ -8,11 +8,11 @@ include '../dbconn.php';
 
     // verify the input
     if(isset($_GET["username"])){
-        $uname = $_GET->username;
-        $pword = $_GET->password;
+        $uname = $_GET["username"];
+        $pword = $_GET["password"];
 
         // query from ldap
-        $ldapurl = "http://172.30.201.238:8080/api/ldap/$uname/$pword";
+        $ldapurl = "http://172.30.201.238:8080/api/ldap/" . $uname. "/" . $pword;
 
         $canlogin = file_get_contents($ldapurl);
         if($canlogin == "TRUE"){
@@ -39,7 +39,7 @@ include '../dbconn.php';
     
 include '../dbclose.php';
 
-    header('Content-Type: application/json');
+    
     echo json_encode($returnarr);
 
 ?>
