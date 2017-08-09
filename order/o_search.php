@@ -12,9 +12,9 @@
         $json = file_get_contents($theurl);
         $obj = json_decode($json);
 
-        $records = $obj->getInfoOrder->records;
+        $arrecords = $obj->getInfoOrder->records;
 
-        print_r $records;
+        print_r $arrecords;
 
     }
 
