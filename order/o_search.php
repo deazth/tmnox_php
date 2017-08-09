@@ -40,15 +40,15 @@
         }
 
         if($reccount > 0){
-            array_push($returnarr, array("acc_name"=>$acc_name,
+            $returnarr = array("acc_name"=>$acc_name,
                 "order_type"=>$order_type,
                 "order_status"=>$order_status,
-                "services"=>$svcsarray ));
+                "services"=>$svcsarray );
         } else {
-            array_push($returnarr, array("error"=>"record not found"));
+            $returnarr = array("error"=>"record not found");
         }
     } else {
-        array_push($returnarr, array("error"=>"bad input"));
+        $returnarr = array("error"=>"bad input");
     }
 
     echo json_encode($returnarr);
