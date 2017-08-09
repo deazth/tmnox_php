@@ -40,10 +40,10 @@
         }
 
         if($reccount > 0){
-            array_push($returnarr, array("acc_name"=>$acc_name));
-            array_push($returnarr, array("order_type"=>$order_type));
-            array_push($returnarr, array("order_status"=>$order_status));
-            array_push($returnarr, array("services"=>$svcsarray));
+            array_push($returnarr, array("acc_name"=>$acc_name,
+                "order_type"=>$order_type,
+                "order_status"=>$order_status,
+                "services"=>$svcsarray ));
         } else {
             array_push($returnarr, array("error"=>"record not found"));
         }
