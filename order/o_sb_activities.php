@@ -27,7 +27,8 @@
 
         $f_sb_js = file_get_contents($f_sb_url);
         $f_sb_obj = json_decode($f_sb_js);
-
+        print_r($f_sb_obj);
+        
         $sblRecords = $f_sb_obj->getActivitySWIFT->records;
 
         print_r($sblRecords);
