@@ -16,7 +16,9 @@ include '../dbconn.php';
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            $returnarr = $result;
+            while($row = $result->fetch_assoc()) {
+                array_push($returnarr, $row);
+            }
         } 
 
     } else {
