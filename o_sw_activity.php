@@ -17,9 +17,9 @@
         $arrecords = $obj->getActivitySWIFT->records;
 
         if(count($arrecords) > 0){
-            print_r($arrecords);
+            $returnarr = array("sw_status"=>$arrecords[0][3]);
         } else {
-            print_r(array("error"=>"No record"));
+            $returnarr = array("error"=>"bad input");
         }
         
 
@@ -28,6 +28,6 @@
         $returnarr = array("error"=>"bad input");
     }
 
-    // echo json_encode($returnarr);
+    echo json_encode($returnarr);
 
 ?>
