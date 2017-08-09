@@ -27,31 +27,31 @@
 
         $f_sb_js = file_get_contents($f_sb_url);
         $f_sb_obj = json_decode($f_sb_js);
-        print_r($f_sb_obj);
-        
-        $sblRecords = $f_sb_obj->getActivitySWIFT->records;
+        // print_r($f_sb_obj);
 
-        print_r($sblRecords);
+        $sblRecords = $f_sb_obj->getOrderActivitySiebel->records;
 
-        // foreach($sblRecords as $ssbl){
-        //     $s_a_id = $ssbl[1];
-        //     $s_a_name = $ssbl[3];
-        //     $s_a_status = $ssbl[2];
+        // print_r($sblRecords);
 
-        //     $sw_a_status = getSwiftActivityStatus($orderno, $s_a_id);
+        foreach($sblRecords as $ssbl){
+            $s_a_id = $ssbl[1];
+            $s_a_name = $ssbl[3];
+            $s_a_status = $ssbl[2];
 
-        //     array_push($returnarr, array(
-        //         "act_id" => $s_a_id,
-        //         "act_name" => $s_a_name,
-        //         "sbl_status" => $s_a_status,
-        //         "swf_status" => $sw_a_status
-        //     ));
-        // }
+            $sw_a_status = getSwiftActivityStatus($orderno, $s_a_id);
+
+            array_push($returnarr, array(
+                "act_id" => $s_a_id,
+                "act_name" => $s_a_name,
+                "sbl_status" => $s_a_status,
+                "swf_status" => $sw_a_status
+            ));
+        }
 
     } else {
         $returnarr = array("error"=>"bad input");
     }
 
-    // echo json_encode($returnarr);
+    echo json_encode($returnarr);
 
 ?>
