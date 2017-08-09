@@ -12,10 +12,12 @@
         $json = file_get_contents($theurl);
         $obj = json_decode($json);
 
-        
+        $records = $obj->getInfoOrder->records;
+
+        print_r $records;
 
     }
 
-    echo json_encode($returnarr);
+    // echo json_encode($returnarr);
 
 ?>
