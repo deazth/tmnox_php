@@ -28,7 +28,8 @@ include '../dbconn.php';
 
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $sd_num = 'SD' . $row->currnum;
+                $ddnum = $row['currnum'];
+                $sd_num = 'SD' . $ddnum;
                 // update the number
                 $sql = "update running_number set currnum = currnum + 1 where rn_type = 'SD'";
                 $conn->query($sql);
@@ -42,7 +43,7 @@ include '../dbconn.php';
         " area, sub_area, problem_type, reference, title, description) values ("
         ."'$sd_num', 'New', '$contact', '$notifyby', '$urg', '$svcseg', '$category', '$area', '$subarea', '$probtype', '$ref', '$title', '$desc')";
 
-        // print($sql);
+        print($sql);
 
         $conn->query($sql);
 
