@@ -41,6 +41,9 @@ include '../dbconn.php';
         $sql = "insert into dummy_iris (interaction_id, status, contact, notify_by, urgency, service_segment, category, " .
         " area, sub_area, problem_type, reference, title, description) values (" .
         ."'$sd_num', 'New', '$contact', '$notifyby', '$urg', '$svcseg', '$category', '$area', '$subarea', '$probtype', '$ref', '$title', '$desc')";
+
+        print($sql);
+
         $conn->query($sql);
 
         $returnarr = array("sdnum"=>$sd_num);
