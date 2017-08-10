@@ -25,14 +25,12 @@
             $acc_name = $srecord[2];
             $order_type = $srecord[1];
             $order_status = $srecord[3];
-            $svc_id = $srecord[4];
-            $prod_code = $srecord[5];
-            $prod_desc = $srecord[6];
-            $prod_name = $srecord[7];
 
             $svc = array(
                 "svc_id" => $srecord[4],
-                "product_name" => $srecord[7]
+                "product_name" => $srecord[7],
+                "product_code" => $srecord[5],
+                "product_desc" => $srecord[6],
             );
 
             array_push($svcsarray, $svc);
