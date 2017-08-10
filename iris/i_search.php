@@ -10,10 +10,6 @@ include '../dbconn.php';
     // verify the input
     if(isset($_GET["sdnum"])){
         $sdnum = $_GET["sdnum"];
-        $closecode = $_GET["closecode"];
-        $solution = $_GET["solution"];
-        $reasoncode = $_GET["reasoncode"];
-        $remark = $_GET["remark"];
 
         // get the latest running number
         $sql = "select * from dummy_iris where interaction_id = '$sdnum'";
