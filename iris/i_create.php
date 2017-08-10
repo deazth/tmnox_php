@@ -43,7 +43,7 @@ include '../dbconn.php';
         " area, sub_area, problem_type, reference, title, description) values ("
         ."'$sd_num', 'New', '$contact', '$notifyby', '$urg', '$svcseg', '$category', '$area', '$subarea', '$probtype', '$ref', '$title', '$desc')";
 
-        print($sql);
+        // print($sql);
 
         $conn->query($sql);
 
